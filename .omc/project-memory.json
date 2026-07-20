@@ -1,0 +1,116 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1784547101872,
+  "projectRoot": "/home/gao/.vajra/worktrees/20260720-113120-addapackagec",
+  "techStack": {
+    "languages": [
+      {
+        "name": "Go",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "go.mod"
+        ]
+      }
+    ],
+    "frameworks": [],
+    "packageManager": "go",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": "set +e\noutput=$(go test ./... 2>&1)\nrc=$?\nprintf '%s\\n' \"$output\"\nif [ \"$rc\" -eq 0 ]; then\n  printf '%s\\n' 'expected RED test run to fail, but it passed' >&2\n  exit 1\nfi\ncase \"$output\" in\n  *'undefined: calc.Add'*) exit 0 ;;\n  *) printf '%s\\n' 'test failed for an unexpected reason' >&2; exit 1 ;;\nesac",
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [],
+    "gitBranches": null
+  },
+  "customNotes": [],
+  "directoryMap": {},
+  "hotPaths": [
+    {
+      "path": "",
+      "accessCount": 4,
+      "lastAccessed": 1784547544454,
+      "type": "directory"
+    },
+    {
+      "path": ".vajra-protected",
+      "accessCount": 2,
+      "lastAccessed": 1784547309951,
+      "type": "file"
+    },
+    {
+      "path": "task.yaml",
+      "accessCount": 1,
+      "lastAccessed": 1784547158885,
+      "type": "file"
+    },
+    {
+      "path": "README.md",
+      "accessCount": 1,
+      "lastAccessed": 1784547158941,
+      "type": "file"
+    },
+    {
+      "path": "go.mod",
+      "accessCount": 1,
+      "lastAccessed": 1784547159118,
+      "type": "file"
+    },
+    {
+      "path": "requirements.md",
+      "accessCount": 1,
+      "lastAccessed": 1784547287530,
+      "type": "file"
+    },
+    {
+      "path": "calc/interface.md",
+      "accessCount": 1,
+      "lastAccessed": 1784547287794,
+      "type": "file"
+    },
+    {
+      "path": "calc/doc.go",
+      "accessCount": 1,
+      "lastAccessed": 1784547288063,
+      "type": "file"
+    },
+    {
+      "path": "calc/calc_test.go",
+      "accessCount": 1,
+      "lastAccessed": 1784547288314,
+      "type": "file"
+    },
+    {
+      "path": "e2e/add_test.go",
+      "accessCount": 1,
+      "lastAccessed": 1784547288573,
+      "type": "file"
+    },
+    {
+      "path": "pr-body.md",
+      "accessCount": 1,
+      "lastAccessed": 1784547289094,
+      "type": "file"
+    },
+    {
+      "path": "assign.yaml",
+      "accessCount": 1,
+      "lastAccessed": 1784547348831,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}
