@@ -1,0 +1,10 @@
+vajra:
+    step: ""
+    attempt: 0
+    agent: system
+    produced_at: 2026-07-20T02:57:14.252292821Z
+    task: ""
+contract_ready: true
+decision: approved_contract
+interface_revised: false
+reason: Public API calc.Add(a,b int) int and its RED unit + e2e tests are defined and verified failing (both gates exit non-zero against the panic stub). calc/calc.go is intentionally NOT protected because Go requires Add's body to live there and the implement step must swap it to 'return a + b'; the signature is pinned by the protected test files instead.
