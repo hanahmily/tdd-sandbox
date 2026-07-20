@@ -2,6 +2,13 @@ vajra:
     step: ""
     attempt: 0
     agent: system
-    produced_at: 2026-07-20T07:16:54.829186777Z
+    produced_at: 2026-07-20T07:27:15.611315969Z
     task: ""
 contract_ready: true
+interface_change:
+    accepted: true
+    kind: protection_boundary
+    public_interface_change: false
+    required: true
+    summary: Removed calc/calc.go from vajra-protected so the implementer can fill the Add body while keeping the final signature func Add(a, b int) int
+summary: Accepted coder protection-boundary revision. Unprotected calc/calc.go only; signature final, RED unit and e2e tests unchanged and still failing, body left unimplemented for the coder

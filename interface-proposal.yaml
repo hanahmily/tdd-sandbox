@@ -1,0 +1,9 @@
+interface_change:
+  required: true
+  kind: protection_boundary
+  protected_file: calc/calc.go
+  requested_change: Remove calc/calc.go from .vajra-protected, then replace only the Add stub body with "return a + b".
+  public_interface_change: false
+  reason: calc/calc.go contains the sole declaration and body of Add, and its current protected body panics. Go does not permit a second declaration or an external replacement for a function body, so no unprotected source file can implement the approved behavior.
+  approved_signature_retained: "func Add(a, b int) int"
+  protected_files_unchanged: true
