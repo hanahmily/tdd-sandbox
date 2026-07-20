@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"set +e\\noutput=$(go test ./... 2>&1)\\nstatus=$?\\nprintf '%s\\\\n' \\\"$output\\\"\\nif [ \\\"$status\\\" -eq 0 ]; then\\n  printf '%s\\\\n' 'expected RED test run to fail, but it passed' >&2\\n  exit 1\\n...",
+  "error": "Exit code 1\n(eval):3: read-only variable: status",
+  "timestamp": "2026-07-20T11:38:45.331Z",
+  "retry_count": 1
+}
