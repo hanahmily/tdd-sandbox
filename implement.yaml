@@ -1,0 +1,8 @@
+vajra:
+    step: ""
+    attempt: 0
+    agent: system
+    produced_at: 2026-07-20T10:40:24.928618297Z
+    task: ""
+interface_change:
+    required: false
