@@ -7,5 +7,10 @@ package tally
 // real summation here to turn the suite green; this file is intentionally NOT
 // in the protected list.
 func sum(values []int) int {
-	panic("tally: Total not implemented")
+	total := 0
+	for _, value := range values {
+		total += value
+	}
+
+	return total
 }
