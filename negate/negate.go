@@ -8,5 +8,5 @@ package negate
 // math.MinInt. Callers relying on the involution property (Value(Value(x)) == x)
 // must therefore avoid math.MinInt.
 func Value(a int) int {
-	panic("negate: not implemented")
+	return -a
 }
