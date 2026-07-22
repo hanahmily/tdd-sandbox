@@ -17,5 +17,11 @@ type Integer interface {
 // The bounds must satisfy low <= high; the result of calling Clamp with
 // low > high is undefined.
 func Clamp[T Integer](value, low, high T) T {
-	panic("clamp: not implemented")
+	if value < low {
+		return low
+	}
+	if value > high {
+		return high
+	}
+	return value
 }
