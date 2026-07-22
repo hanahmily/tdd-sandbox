@@ -5,5 +5,11 @@ package signint
 // +1 when n is positive. It is a total function defined over the full int
 // range, including math.MinInt and math.MaxInt.
 func Sign(n int) int {
-	panic("signint.Sign: not implemented")
+	if n < 0 {
+		return -1
+	}
+	if n > 0 {
+		return 1
+	}
+	return 0
 }
