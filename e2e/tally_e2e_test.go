@@ -46,3 +46,30 @@ func TestE2EEmptyCart(t *testing.T) {
 		t.Fatalf("empty cart total = %d, want 0", got)
 	}
 }
+
+// TestE2ENetRefundTotal simulates a realistic account-adjustment run where the
+// credits/refunds applied to an order exceed its charges, so the net movement
+// is negative. It proves sign preservation survives all the way through the
+// public API for a believable downstream use case, not only in unit tests.
+func TestE2ENetRefundTotal(t *testing.T) {
+	// Signed ledger entries in cents: one remaining charge against two refunds
+	// (a returned item and a goodwill credit) that together exceed it.
+	ledger := map[string]int{
+		"restocking fee":  250,   // +$2.50 charge
+		"item refund":     -4500, // -$45.00
+		"goodwill credit": -1000, // -$10.00
+	}
+
+	entries := make([]int, 0, len(ledger))
+	for _, cents := range ledger {
+		entries = append(entries, cents)
+	}
+
+	const wantCents = 250 - 4500 - 1000 // -5250 cents => -$52.50
+
+	gotCents := tally.Total(entries)
+	if gotCents != wantCents {
+		t.Fatalf("net ledger total = %d cents, want %d cents ($%.2f)",
+			gotCents, wantCents, float64(wantCents)/100)
+	}
+}
