@@ -1,2 +1,4 @@
 /bin/
 *.out
+# OMC runtime state
+.omc/
