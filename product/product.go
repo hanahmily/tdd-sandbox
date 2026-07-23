@@ -6,5 +6,5 @@ package product
 // The contract is defined here; the implementation is intentionally left
 // unimplemented so the accompanying unit and end-to-end tests start RED.
 func Mul(a, b int) int {
-	panic("product.Mul not implemented")
+	return a * b
 }
