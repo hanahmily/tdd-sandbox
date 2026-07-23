@@ -7,5 +7,5 @@ package between
 // part of the range. Callers are expected to pass min <= max; when min > max
 // the range is empty and Between returns false for every value.
 func Between(value, min, max int) bool {
-	panic("between: Between not implemented")
+	return value >= min && value <= max
 }
