@@ -7,5 +7,5 @@ package difference
 // until a real implementation exists. The coder replaces the body; the
 // signature is the approved, frozen contract.
 func Sub(a, b int) int {
-	panic("difference.Sub: not implemented")
+	return a - b
 }
