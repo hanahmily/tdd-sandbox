@@ -7,5 +7,5 @@ package difference
 // value so the unit and end-to-end tests fail until a real implementation
 // replaces this body. The coder is expected to modify this file.
 func Sub(a, b int) int {
-	return 0
+	return a - b
 }
